@@ -101,10 +101,10 @@ int main(void)
 	  	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 	  	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	  	count--;
-	  	if(count ==0)
+	  	if(count == 0)
 	  	{
 	  		flag = 0;
-	  		count =20;
+	  		count = 20;
 	  	}
 	  }
 	  else
@@ -115,7 +115,7 @@ int main(void)
 	  	if(count ==0)
 	  	{
 	  		flag = 1;
-	  		count =20;
+	  		count = 20;
 	  	}
 	  }
 	  HAL_Delay(100);
