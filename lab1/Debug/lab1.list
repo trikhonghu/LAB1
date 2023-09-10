@@ -244,9 +244,11 @@ int main(void)
  8000260:	687b      	ldr	r3, [r7, #4]
  8000262:	2b0b      	cmp	r3, #11
  8000264:	dd01      	ble.n	800026a <main+0x26>
+	  {
 		  countSec =0;
  8000266:	2300      	movs	r3, #0
  8000268:	607b      	str	r3, [r7, #4]
+	  }
 	   HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, SET);
  800026a:	2201      	movs	r2, #1
  800026c:	2110      	movs	r1, #16

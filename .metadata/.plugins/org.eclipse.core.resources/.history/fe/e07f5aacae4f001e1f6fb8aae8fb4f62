@@ -140,9 +140,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  if(countSec >=12)
-	  {
 		  countSec =0;
-	  }
 	   HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, SET);
    	   HAL_GPIO_WritePin(two_GPIO_Port, two_Pin, SET);
 	   HAL_GPIO_WritePin(three_GPIO_Port, three_Pin, SET);
