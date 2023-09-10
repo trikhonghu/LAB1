@@ -139,8 +139,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(countSec >=12)
-		  countSec =0;
+	  if(count >=12)
+		  count =0;
 	   HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, SET);
    	   HAL_GPIO_WritePin(two_GPIO_Port, two_Pin, SET);
 	   HAL_GPIO_WritePin(three_GPIO_Port, three_Pin, SET);
