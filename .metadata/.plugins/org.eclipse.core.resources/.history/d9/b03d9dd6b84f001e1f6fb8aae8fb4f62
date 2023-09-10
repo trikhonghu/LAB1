@@ -222,7 +222,7 @@ int main(void)
 		   if(countSec ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagSec=0;
+			   flagSec--;
 		   }
 		   else
 		   {

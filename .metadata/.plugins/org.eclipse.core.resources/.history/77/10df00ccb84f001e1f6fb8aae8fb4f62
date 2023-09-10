@@ -222,7 +222,7 @@ int main(void)
 		   if(countSec ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagSec=0;
+			   flagSec--;
 		   }
 		   else
 		   {
@@ -237,7 +237,7 @@ int main(void)
 		   if(countMin ==0 && flagMin ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagMin=0;
+			   flagMin--;
 		   }
 		   else
 		   {
@@ -252,7 +252,7 @@ int main(void)
 		   if(countHour ==0 && flagHour  ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagHour=0;
+			   flagHour--;
 		   }
 		   else
 		   {
