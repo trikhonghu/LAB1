@@ -138,6 +138,18 @@ int main(void)
   int countSec =0;
   int countMin =0;
   int countHour =0;
+  HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, SET);
+  HAL_GPIO_WritePin(two_GPIO_Port, two_Pin, SET);
+  HAL_GPIO_WritePin(three_GPIO_Port, three_Pin, SET);
+  HAL_GPIO_WritePin(four_GPIO_Port, four_Pin, SET);
+  HAL_GPIO_WritePin(five_GPIO_Port, five_Pin, SET);
+  HAL_GPIO_WritePin(six_GPIO_Port, six_Pin, SET);
+  HAL_GPIO_WritePin(seven_GPIO_Port, seven_Pin, SET);
+  HAL_GPIO_WritePin(eight_GPIO_Port, eight_Pin, SET);
+  HAL_GPIO_WritePin(nine_GPIO_Port, nine_Pin, SET);
+  HAL_GPIO_WritePin(ten_GPIO_Port, ten_Pin, SET);
+  HAL_GPIO_WritePin(eleven_GPIO_Port, eleven_Pin, SET);
+  HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, SET);
   while (1)
   {
     /* USER CODE END WHILE */
