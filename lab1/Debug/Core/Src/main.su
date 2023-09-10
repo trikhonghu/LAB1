@@ -1,4 +1,4 @@
-main.c:89:8:displayClock	16	static
+main.c:89:8:setNumberOnClock	16	static
 main.c:64:5:main	24	static
 main.c:135:8:clearAllClock	16	static
 main.c:196:6:SystemClock_Config	72	static

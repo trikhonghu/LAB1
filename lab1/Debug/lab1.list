@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   000045bc  00000000  00000000  00039c27  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0007996f  00000000  00000000  0003e1e3  2**0
+ 18 .debug_str    00079973  00000000  00000000  0003e1e3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b7b52  2**0
+ 19 .comment      00000053  00000000  00000000  000b7b56  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000d78  00000000  00000000  000b7ba8  2**2
+ 20 .debug_frame  00000d78  00000000  00000000  000b7bac  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -76,12 +76,12 @@ Disassembly of section .text:
  8000144:	20000010 	.word	0x20000010
  8000148:	080013e4 	.word	0x080013e4
 
-0800014c <displayClock.5429>:
+0800014c <setNumberOnClock.5429>:
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  void displayClock(int num)
+  void setNumberOnClock(int num)
   {
  800014c:	b580      	push	{r7, lr}
  800014e:	b082      	sub	sp, #8
@@ -90,8 +90,8 @@ Disassembly of section .text:
  8000154:	f8c7 c000 	str.w	ip, [r7]
  8000158:	687b      	ldr	r3, [r7, #4]
  800015a:	2b0b      	cmp	r3, #11
- 800015c:	d86a      	bhi.n	8000234 <displayClock.5429+0xe8>
- 800015e:	a201      	add	r2, pc, #4	; (adr r2, 8000164 <displayClock.5429+0x18>)
+ 800015c:	d86a      	bhi.n	8000234 <setNumberOnClock.5429+0xe8>
+ 800015e:	a201      	add	r2, pc, #4	; (adr r2, 8000164 <setNumberOnClock.5429+0x18>)
  8000160:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  8000164:	08000195 	.word	0x08000195
  8000168:	080001a3 	.word	0x080001a3
@@ -111,98 +111,98 @@ Disassembly of section .text:
 			HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, RESET);
  8000194:	2200      	movs	r2, #0
  8000196:	f44f 4100 	mov.w	r1, #32768	; 0x8000
- 800019a:	4829      	ldr	r0, [pc, #164]	; (8000240 <displayClock.5429+0xf4>)
+ 800019a:	4829      	ldr	r0, [pc, #164]	; (8000240 <setNumberOnClock.5429+0xf4>)
  800019c:	f000 fd02 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001a0:	e049      	b.n	8000236 <displayClock.5429+0xea>
+ 80001a0:	e049      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 1:
 			HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, RESET);
  80001a2:	2200      	movs	r2, #0
  80001a4:	2110      	movs	r1, #16
- 80001a6:	4826      	ldr	r0, [pc, #152]	; (8000240 <displayClock.5429+0xf4>)
+ 80001a6:	4826      	ldr	r0, [pc, #152]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001a8:	f000 fcfc 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001ac:	e043      	b.n	8000236 <displayClock.5429+0xea>
+ 80001ac:	e043      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 2:
 			HAL_GPIO_WritePin(two_GPIO_Port, two_Pin, RESET);
  80001ae:	2200      	movs	r2, #0
  80001b0:	2120      	movs	r1, #32
- 80001b2:	4823      	ldr	r0, [pc, #140]	; (8000240 <displayClock.5429+0xf4>)
+ 80001b2:	4823      	ldr	r0, [pc, #140]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001b4:	f000 fcf6 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001b8:	e03d      	b.n	8000236 <displayClock.5429+0xea>
+ 80001b8:	e03d      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 3:
 			HAL_GPIO_WritePin(three_GPIO_Port, three_Pin, RESET);
  80001ba:	2200      	movs	r2, #0
  80001bc:	2140      	movs	r1, #64	; 0x40
- 80001be:	4820      	ldr	r0, [pc, #128]	; (8000240 <displayClock.5429+0xf4>)
+ 80001be:	4820      	ldr	r0, [pc, #128]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001c0:	f000 fcf0 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001c4:	e037      	b.n	8000236 <displayClock.5429+0xea>
+ 80001c4:	e037      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 4:
 			HAL_GPIO_WritePin(four_GPIO_Port, four_Pin, RESET);
  80001c6:	2200      	movs	r2, #0
  80001c8:	2180      	movs	r1, #128	; 0x80
- 80001ca:	481d      	ldr	r0, [pc, #116]	; (8000240 <displayClock.5429+0xf4>)
+ 80001ca:	481d      	ldr	r0, [pc, #116]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001cc:	f000 fcea 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001d0:	e031      	b.n	8000236 <displayClock.5429+0xea>
+ 80001d0:	e031      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 5:
 			HAL_GPIO_WritePin(five_GPIO_Port, five_Pin, RESET);
  80001d2:	2200      	movs	r2, #0
  80001d4:	f44f 7180 	mov.w	r1, #256	; 0x100
- 80001d8:	4819      	ldr	r0, [pc, #100]	; (8000240 <displayClock.5429+0xf4>)
+ 80001d8:	4819      	ldr	r0, [pc, #100]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001da:	f000 fce3 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001de:	e02a      	b.n	8000236 <displayClock.5429+0xea>
+ 80001de:	e02a      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 6:
 			HAL_GPIO_WritePin(six_GPIO_Port, six_Pin, RESET);
  80001e0:	2200      	movs	r2, #0
  80001e2:	f44f 7100 	mov.w	r1, #512	; 0x200
- 80001e6:	4816      	ldr	r0, [pc, #88]	; (8000240 <displayClock.5429+0xf4>)
+ 80001e6:	4816      	ldr	r0, [pc, #88]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001e8:	f000 fcdc 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001ec:	e023      	b.n	8000236 <displayClock.5429+0xea>
+ 80001ec:	e023      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 7:
 			HAL_GPIO_WritePin(seven_GPIO_Port, seven_Pin, RESET);
  80001ee:	2200      	movs	r2, #0
  80001f0:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 80001f4:	4812      	ldr	r0, [pc, #72]	; (8000240 <displayClock.5429+0xf4>)
+ 80001f4:	4812      	ldr	r0, [pc, #72]	; (8000240 <setNumberOnClock.5429+0xf4>)
  80001f6:	f000 fcd5 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 80001fa:	e01c      	b.n	8000236 <displayClock.5429+0xea>
+ 80001fa:	e01c      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 8:
 			HAL_GPIO_WritePin(eight_GPIO_Port, eight_Pin, RESET);
  80001fc:	2200      	movs	r2, #0
  80001fe:	f44f 6100 	mov.w	r1, #2048	; 0x800
- 8000202:	480f      	ldr	r0, [pc, #60]	; (8000240 <displayClock.5429+0xf4>)
+ 8000202:	480f      	ldr	r0, [pc, #60]	; (8000240 <setNumberOnClock.5429+0xf4>)
  8000204:	f000 fcce 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 8000208:	e015      	b.n	8000236 <displayClock.5429+0xea>
+ 8000208:	e015      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 9:
 			HAL_GPIO_WritePin(nine_GPIO_Port, nine_Pin, RESET);
  800020a:	2200      	movs	r2, #0
  800020c:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8000210:	480b      	ldr	r0, [pc, #44]	; (8000240 <displayClock.5429+0xf4>)
+ 8000210:	480b      	ldr	r0, [pc, #44]	; (8000240 <setNumberOnClock.5429+0xf4>)
  8000212:	f000 fcc7 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 8000216:	e00e      	b.n	8000236 <displayClock.5429+0xea>
+ 8000216:	e00e      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 10:
 			HAL_GPIO_WritePin(ten_GPIO_Port, ten_Pin, RESET);
  8000218:	2200      	movs	r2, #0
  800021a:	f44f 5100 	mov.w	r1, #8192	; 0x2000
- 800021e:	4808      	ldr	r0, [pc, #32]	; (8000240 <displayClock.5429+0xf4>)
+ 800021e:	4808      	ldr	r0, [pc, #32]	; (8000240 <setNumberOnClock.5429+0xf4>)
  8000220:	f000 fcc0 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 8000224:	e007      	b.n	8000236 <displayClock.5429+0xea>
+ 8000224:	e007      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		case 11:
 			HAL_GPIO_WritePin(eleven_GPIO_Port, eleven_Pin, RESET);
  8000226:	2200      	movs	r2, #0
  8000228:	f44f 4180 	mov.w	r1, #16384	; 0x4000
- 800022c:	4804      	ldr	r0, [pc, #16]	; (8000240 <displayClock.5429+0xf4>)
+ 800022c:	4804      	ldr	r0, [pc, #16]	; (8000240 <setNumberOnClock.5429+0xf4>)
  800022e:	f000 fcb9 	bl	8000ba4 <HAL_GPIO_WritePin>
 			break;
- 8000232:	e000      	b.n	8000236 <displayClock.5429+0xea>
+ 8000232:	e000      	b.n	8000236 <setNumberOnClock.5429+0xea>
 		default:
 
 			break;
@@ -290,7 +290,7 @@ int main(void)
  80002b8:	469c      	mov	ip, r3
  80002ba:	f000 f843 	bl	8000344 <clearAllClock.5445>
 
-		   displayClock(countSec/5);
+		   setNumberOnClock(countSec/5);
  80002be:	68fb      	ldr	r3, [r7, #12]
  80002c0:	4a1f      	ldr	r2, [pc, #124]	; (8000340 <main+0xfc>)
  80002c2:	fb82 1203 	smull	r1, r2, r2, r3
@@ -300,8 +300,8 @@ int main(void)
  80002cc:	463a      	mov	r2, r7
  80002ce:	4694      	mov	ip, r2
  80002d0:	4618      	mov	r0, r3
- 80002d2:	f7ff ff3b 	bl	800014c <displayClock.5429>
-		   displayClock(countMin/5);
+ 80002d2:	f7ff ff3b 	bl	800014c <setNumberOnClock.5429>
+		   setNumberOnClock(countMin/5);
  80002d6:	68bb      	ldr	r3, [r7, #8]
  80002d8:	4a19      	ldr	r2, [pc, #100]	; (8000340 <main+0xfc>)
  80002da:	fb82 1203 	smull	r1, r2, r2, r3
@@ -311,8 +311,8 @@ int main(void)
  80002e4:	463a      	mov	r2, r7
  80002e6:	4694      	mov	ip, r2
  80002e8:	4618      	mov	r0, r3
- 80002ea:	f7ff ff2f 	bl	800014c <displayClock.5429>
-		   displayClock(countHour/5);
+ 80002ea:	f7ff ff2f 	bl	800014c <setNumberOnClock.5429>
+		   setNumberOnClock(countHour/5);
  80002ee:	687b      	ldr	r3, [r7, #4]
  80002f0:	4a13      	ldr	r2, [pc, #76]	; (8000340 <main+0xfc>)
  80002f2:	fb82 1203 	smull	r1, r2, r2, r3
@@ -322,7 +322,7 @@ int main(void)
  80002fc:	463a      	mov	r2, r7
  80002fe:	4694      	mov	ip, r2
  8000300:	4618      	mov	r0, r3
- 8000302:	f7ff ff23 	bl	800014c <displayClock.5429>
+ 8000302:	f7ff ff23 	bl	800014c <setNumberOnClock.5429>
 	   }
 
 	   countSec++;

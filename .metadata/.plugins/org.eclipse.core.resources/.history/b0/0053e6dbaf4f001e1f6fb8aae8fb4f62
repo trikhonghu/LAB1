@@ -86,7 +86,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  void setNumberOnClock(int num)
+  void displayClock(int num)
   {
 	  switch (num)
 	  {
@@ -161,9 +161,9 @@ int main(void)
 	   {
 		   clearAllClock();
 
-		   setNumberOnClock(countSec/5);
-		   setNumberOnClock(countMin/5);
-		   setNumberOnClock(countHour/5);
+		   displayClock(countSec/5);
+		   displayClock(countMin/5);
+		   displayClock(countHour/5);
 	   }
 
 	   countSec++;
