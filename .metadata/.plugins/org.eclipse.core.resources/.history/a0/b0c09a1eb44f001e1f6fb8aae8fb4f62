@@ -200,65 +200,15 @@ int main(void)
   int countSec =0;
   int countMin =0;
   int countHour =0;
-  int flagSec =0;
-  int flagMin =0;
-  int flagHour =0;
-
-  clearAllClock();
-
   while (1)
   {
     /* USER CODE END WHILE */
-
-	   if(countSec/5 ==11)
-		   flagSec =1;
-	   if(countMin/5 ==11)
-		   flagMin =1;
-	   if(countHour/5 ==11)
-		   flagHour =1;
-
-	   if(countSec %5 ==0)
+	   if(countSec%5==0 || countMin%5==0 || countHour%5==0)
 	   {
-		   if(countSec ==0 && flagSec ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagSec--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countSec/5-1);
-		   }
+		   clearAllClock();
 
 		   setNumberOnClock(countSec/5);
-	   }
-
-	   if(countMin %5 ==0)
-	   {
-		   if(countMin ==0 && flagMin ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagMin--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countMin/5-1);
-		   }
-
 		   setNumberOnClock(countMin/5);
-	   }
-
-	   if(countHour %5 ==0)
-	   {
-		   if(countHour ==0 && flagHour  ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagHour--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countHour/5-1);
-		   }
-
 		   setNumberOnClock(countHour/5);
 	   }
 

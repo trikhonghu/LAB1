@@ -210,11 +210,11 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-	   if(countSec/5 ==11)
+	   if(countSec/5 ==1)
 		   flagSec =1;
-	   if(countMin/5 ==11)
+	   if(countMin/5 ==1)
 		   flagMin =1;
-	   if(countHour/5 ==11)
+	   if(countHour/5 ==1)
 		   flagHour =1;
 
 	   if(countSec %5 ==0)
@@ -222,7 +222,7 @@ int main(void)
 		   if(countSec ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagSec--;
+			   flagSec =0;
 		   }
 		   else
 		   {
@@ -234,10 +234,10 @@ int main(void)
 
 	   if(countMin %5 ==0)
 	   {
-		   if(countMin ==0 && flagMin ==1)
+		   if(countMin ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagMin--;
+			   flagMin =0;
 		   }
 		   else
 		   {
@@ -249,10 +249,10 @@ int main(void)
 
 	   if(countHour %5 ==0)
 	   {
-		   if(countHour ==0 && flagHour  ==1)
+		   if(countHour ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagHour--;
+			   flagHour =0;
 		   }
 		   else
 		   {

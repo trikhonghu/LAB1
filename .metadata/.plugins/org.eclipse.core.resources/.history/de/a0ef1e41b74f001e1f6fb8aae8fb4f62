@@ -249,7 +249,7 @@ int main(void)
 
 	   if(countHour %5 ==0)
 	   {
-		   if(countHour ==0 && flagHour  ==1)
+		   if(countHour ==0 && flagMin ==1)
 		   {
 			   clearNumberOnClock(11);
 			   flagHour--;

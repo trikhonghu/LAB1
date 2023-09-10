@@ -127,7 +127,7 @@ int main(void)
 			HAL_GPIO_WritePin(eleven_GPIO_Port, eleven_Pin, RESET);
 			break;
 		default:
-			HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, RESET);
+
 			break;
 	}
   }
@@ -147,52 +147,6 @@ int main(void)
 	   HAL_GPIO_WritePin(eleven_GPIO_Port, eleven_Pin, SET);
 	   HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, SET);
   }
-
-  void clearNumberOnClock(int num)
-  {
-	  switch (num)
-	  {
-		case 0:
-			HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, SET);
-			break;
-		case 1:
-			HAL_GPIO_WritePin(one_GPIO_Port, one_Pin, SET);
-			break;
-		case 2:
-			HAL_GPIO_WritePin(two_GPIO_Port, two_Pin, SET);
-			break;
-		case 3:
-			HAL_GPIO_WritePin(three_GPIO_Port, three_Pin, SET);
-			break;
-		case 4:
-			HAL_GPIO_WritePin(four_GPIO_Port, four_Pin, SET);
-			break;
-		case 5:
-			HAL_GPIO_WritePin(five_GPIO_Port, five_Pin, SET);
-			break;
-		case 6:
-			HAL_GPIO_WritePin(six_GPIO_Port, six_Pin, SET);
-			break;
-		case 7:
-			HAL_GPIO_WritePin(seven_GPIO_Port, seven_Pin, SET);
-			break;
-		case 8:
-			HAL_GPIO_WritePin(eight_GPIO_Port, eight_Pin, SET);
-			break;
-		case 9:
-			HAL_GPIO_WritePin(nine_GPIO_Port, nine_Pin, SET);
-			break;
-		case 10:
-			HAL_GPIO_WritePin(ten_GPIO_Port, ten_Pin, SET);
-			break;
-		case 11:
-			HAL_GPIO_WritePin(eleven_GPIO_Port, eleven_Pin, SET);
-			break;
-		default:
-			HAL_GPIO_WritePin(twelve_GPIO_Port, twelve_Pin, SET);
-			break;
-	}
-  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -200,65 +154,15 @@ int main(void)
   int countSec =0;
   int countMin =0;
   int countHour =0;
-  int flagSec =0;
-  int flagMin =0;
-  int flagHour =0;
-
-  clearAllClock();
-
   while (1)
   {
     /* USER CODE END WHILE */
-
-	   if(countSec/5 ==11)
-		   flagSec =1;
-	   if(countMin/5 ==11)
-		   flagMin =1;
-	   if(countHour/5 ==11)
-		   flagHour =1;
-
-	   if(countSec %5 ==0)
+	   if(countSec%5==0 || countMin%5==0 || countHour%5==0)
 	   {
-		   if(countSec ==0 && flagSec ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagSec--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countSec/5-1);
-		   }
+		   clearAllClock();
 
 		   setNumberOnClock(countSec/5);
-	   }
-
-	   if(countMin %5 ==0)
-	   {
-		   if(countMin ==0 && flagMin ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagMin--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countMin/5-1);
-		   }
-
 		   setNumberOnClock(countMin/5);
-	   }
-
-	   if(countHour %5 ==0)
-	   {
-		   if(countHour ==0 && flagHour  ==1)
-		   {
-			   clearNumberOnClock(11);
-			   flagHour--;
-		   }
-		   else
-		   {
-			   clearNumberOnClock(countHour/5-1);
-		   }
-
 		   setNumberOnClock(countHour/5);
 	   }
 

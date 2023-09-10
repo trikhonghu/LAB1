@@ -209,20 +209,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
-	   if(countSec/5 ==11)
-		   flagSec =1;
-	   if(countMin/5 ==11)
-		   flagMin =1;
-	   if(countHour/5 ==11)
-		   flagHour =1;
-
 	   if(countSec %5 ==0)
 	   {
 		   if(countSec ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagSec--;
 		   }
 		   else
 		   {
@@ -234,10 +225,9 @@ int main(void)
 
 	   if(countMin %5 ==0)
 	   {
-		   if(countMin ==0 && flagMin ==1)
+		   if(countMin ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagMin--;
 		   }
 		   else
 		   {
@@ -249,10 +239,9 @@ int main(void)
 
 	   if(countHour %5 ==0)
 	   {
-		   if(countHour ==0 && flagHour  ==1)
+		   if(countHour ==0 && flagSec ==1)
 		   {
 			   clearNumberOnClock(11);
-			   flagHour--;
 		   }
 		   else
 		   {

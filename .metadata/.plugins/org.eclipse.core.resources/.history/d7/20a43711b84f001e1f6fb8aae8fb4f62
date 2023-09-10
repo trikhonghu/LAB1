@@ -216,7 +216,11 @@ int main(void)
 		   flagMin =1;
 	   if(countHour/5 ==11)
 		   flagHour =1;
-
+	   if(countSec == countMin == countHour)
+	   {
+		   setNumberOnClock(countSec/5);
+	   }
+	   else{
 	   if(countSec %5 ==0)
 	   {
 		   if(countSec ==0 && flagSec ==1)
@@ -249,7 +253,7 @@ int main(void)
 
 	   if(countHour %5 ==0)
 	   {
-		   if(countHour ==0 && flagHour  ==1)
+		   if(countHour ==0 && flagHour ==1)
 		   {
 			   clearNumberOnClock(11);
 			   flagHour--;
@@ -260,6 +264,7 @@ int main(void)
 		   }
 
 		   setNumberOnClock(countHour/5);
+	   }
 	   }
 
 	   countSec++;
