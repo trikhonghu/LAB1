@@ -1,13 +1,6 @@
-08:32:24 **** Incremental Build of configuration Debug for project lab1 ****
+08:33:59 **** Incremental Build of configuration Debug for project lab1 ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:95:7: warning: unused variable 'flag2' [-Wunused-variable]
-   95 |   int flag2 =0;
-      |       ^~~~~
-../Core/Src/main.c:94:7: warning: unused variable 'flag1' [-Wunused-variable]
-   94 |   int flag1 = 0;
-      |       ^~~~~
 arm-none-eabi-gcc -o "lab1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Desktop\lab_vxl\lab1\lab1\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: lab1.elf
  
@@ -15,7 +8,7 @@ arm-none-eabi-size   lab1.elf
 arm-none-eabi-objdump -h -S  lab1.elf  > "lab1.list"
 arm-none-eabi-objcopy  -O ihex  lab1.elf  "lab1.hex"
    text	   data	    bss	    dec	    hex	filename
-   6008	     20	   1572	   7600	   1db0	lab1.elf
+   6000	     20	   1572	   7592	   1da8	lab1.elf
 arm-none-eabi-objcopy  -O binary  lab1.elf  "lab1.bin"
 Finished building: default.size.stdout
  
@@ -26,5 +19,5 @@ Finished building: lab1.list
  
  
 
-08:32:24 Build Finished. 0 errors, 2 warnings. (took 536ms)
+08:34:00 Build Finished. 0 errors, 0 warnings. (took 473ms)
 

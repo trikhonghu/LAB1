@@ -91,6 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int flag1 = 0;
+  int flag2 =0;
   int count =0;
 
   void display7Led(int num)
