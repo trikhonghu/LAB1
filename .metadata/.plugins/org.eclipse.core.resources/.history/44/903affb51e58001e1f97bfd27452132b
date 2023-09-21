@@ -209,6 +209,7 @@ int main(void)
 
 	    /* USER CODE END WHILE */
 	  	  display7Led((10-(count/10))%10);
+		  count++;
 		  if(count >=0 && count <50)
 		  {
 			  HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
@@ -250,7 +251,6 @@ int main(void)
 		  else
 			  count = 0;
 		    /* USER CODE BEGIN 3 */
-		  count++;
 			  HAL_Delay(100);
   }
   /* USER CODE END 3 */
