@@ -225,27 +225,15 @@ int main(void)
 		   flagHour =1;
 	   if(countSec > prev_Sec+5)
 	   {
-		   prev_Sec+=5;
-		   if(prev_Sec >= 60)
-		   {
-			   prev_Sec =0;
-		   }
+		   prevSec+=5;
 	   }
 	   if(countMin > prev_Min+5)
 	   {
-		   prev_Min+=5;
-		   if(prev_Min >= 60)
-		   {
-			   prev_Min =0;
-		   }
+		   prevMin+=5;
 	   }
 	   if(countHour > prev_Hour+5)
 	   {
-		   prev_Hour+=5;
-		   if(prev_Hour >= 60)
-		   {
-			   prev_Hour =0;
-		   }
+		   prevHour+=5;
 	   }
 
 	   if(countSec %5 ==0)
@@ -259,8 +247,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countSec/5 - 1 != countMin/5 && countSec/5-1 != countHour/5)
-					   clearNumberOnClock(countSec/5-1);
+				   clearNumberOnClock(countSec/5-1);
 			   }
 		   }
 		   setNumberOnClock(countSec/5);
@@ -277,8 +264,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countMin/5-1 != countHour/5 && countMin/5-1 != countSec/5)
-					   clearNumberOnClock(countMin/5-1);
+				   clearNumberOnClock(countMin/5-1);
 			   }
 		   }
 		   setNumberOnClock(countMin/5);
@@ -295,8 +281,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countHour/5 -1 != countSec/5 && countHour/5 -1 != countMin/5)
-				   	   clearNumberOnClock(countHour/5-1);
+				   clearNumberOnClock(countHour/5-1);
 			   }
 		   }
 		   setNumberOnClock(countHour/5);

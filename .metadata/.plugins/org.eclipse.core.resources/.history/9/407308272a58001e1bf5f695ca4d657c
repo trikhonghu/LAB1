@@ -295,8 +295,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countHour/5 -1 != countSec/5 && countHour/5 -1 != countMin/5)
-				   	   clearNumberOnClock(countHour/5-1);
+				   clearNumberOnClock(countHour/5-1);
 			   }
 		   }
 		   setNumberOnClock(countHour/5);

@@ -259,8 +259,8 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countSec/5 - 1 != countMin/5 && countSec/5-1 != countHour/5)
-					   clearNumberOnClock(countSec/5-1);
+				   if(countSec/5 - 1 != counMin/5 && countSec/5-1 != countHour)
+				   clearNumberOnClock(countSec/5-1);
 			   }
 		   }
 		   setNumberOnClock(countSec/5);
@@ -277,8 +277,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countMin/5-1 != countHour/5 && countMin/5-1 != countSec/5)
-					   clearNumberOnClock(countMin/5-1);
+				   clearNumberOnClock(countMin/5-1);
 			   }
 		   }
 		   setNumberOnClock(countMin/5);
@@ -295,8 +294,7 @@ int main(void)
 			   }
 			   else
 			   {
-				   if(countHour/5 -1 != countSec/5 && countHour/5 -1 != countMin/5)
-				   	   clearNumberOnClock(countHour/5-1);
+				   clearNumberOnClock(countHour/5-1);
 			   }
 		   }
 		   setNumberOnClock(countHour/5);
