@@ -206,7 +206,6 @@ int main(void)
   {
 
 	    /* USER CODE END WHILE */
-	  	  count++;
 	  	  display7Led((10-(count/10))%10);
 		  if(count >=0 && count <50)
 		  {
@@ -249,6 +248,7 @@ int main(void)
 		  if(count > 100)
 			  count = 0;
 		    /* USER CODE BEGIN 3 */
+		  count++;
 			  HAL_Delay(100);
   }
   /* USER CODE END 3 */
